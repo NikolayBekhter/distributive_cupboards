@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserDto {
     private Long id;
-    private String userLogin;
-    private String userPassword;
+    private String login;
+    private String password;
     private String mail;
-    private String userName;
-    private String userSurname;
+    private String username;
+    private String surname;
     private String department;
     private String updatedAt;
 }

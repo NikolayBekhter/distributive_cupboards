@@ -12,9 +12,9 @@ public class DistributiveBoxDto {
     private Long id;
     private String boxNumber;
     private String street;
-    private int house;
-    private int houseBlock;
-    private int entrance;
+    private String house;
+    private String houseBlock;
+    private String entrance;
     private String enterCode;
     private String description;
 }

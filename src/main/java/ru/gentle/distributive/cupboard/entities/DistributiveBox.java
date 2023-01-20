@@ -16,20 +16,20 @@ public class DistributiveBox {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "box_number")
+    @Column(name = "box_number", nullable = false)
     private String boxNumber;
 
-    @Column(name = "street")
+    @Column(name = "street", nullable = false)
     private String street;
 
     @Column(name = "house")
-    private int house;
+    private String house;
 
     @Column(name = "house_block")
-    private int houseBlock;
+    private String houseBlock;
 
     @Column(name = "entrance")
-    private int entrance;
+    private String entrance;
 
     @Column(name = "enter_code")
     private String enterCode;

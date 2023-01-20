@@ -21,7 +21,4 @@ public class Role {
     @Column(name = "name_role")
     private String nameRole;
 
-    @ManyToMany(mappedBy = "roles")
-    private Collection<MyUser> users;
-
 }

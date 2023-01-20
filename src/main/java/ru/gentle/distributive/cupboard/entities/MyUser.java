@@ -23,25 +23,25 @@ public class MyUser {
 
     @Column(name = "nickname", nullable = false)
     private String nickname;
-    @Column(name = "user_password", nullable = false)
-    private String userPassword;
+    @Column(name = "password", nullable = false)
+    private String password;
     @Column(name = "mail", nullable = false)
     private String mail;
 
-    @Column(name = "user_name", nullable = false)
-    private String userName;
+    @Column(name = "username", nullable = false)
+    private String username;
 
-    @Column(name = "user_surname", nullable = false)
-    private String userSurname;
+    @Column(name = "surname", nullable = false)
+    private String surname;
 
     @Column(name = "department", nullable = false)
     private String department;
 
-    @Column(name = "is_active")
+    @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
     @ManyToMany
-    @JoinTable(name = "user_roles",
+    @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;

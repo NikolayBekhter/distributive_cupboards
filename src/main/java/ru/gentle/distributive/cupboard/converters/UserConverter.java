@@ -12,11 +12,11 @@ public class UserConverter {
         return new UserDto(
                 user.getId(),
                 user.getNickname(),
-                user.getUserPassword(),
+                user.getPassword(),
                 user.getMail(),
                 user.getDepartment(),
-                user.getUserName(),
-                user.getUserSurname(),
+                user.getUsername(),
+                user.getSurname(),
                 user.getUpdatedAt().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG))
         );
     }
