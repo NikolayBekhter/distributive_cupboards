@@ -6,6 +6,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -15,13 +16,10 @@ import java.util.stream.Collectors;
 
 @Component
 public class JwtTokenUtil {
-    //    @Value("${jwt.secret}")
-    //    private String secret;
-    //    @Value("${jwt.lifetime}")
-    //    private Integer lifetime;
-
-    private final String secret = "EI&!%Ti34NeSmOtRi7666SUDA23232eto43SEcRET@#$%^&%$@Ponyal?uroD";
-    private Integer lifetime = 36000000;
+    @Value("${jwt.secret}")
+    private String secret;
+    @Value("${jwt.lifetime}")
+    private Integer lifetime;
 
 
     public String generateToken(UserDetails userDetails) {
@@ -55,5 +53,13 @@ public class JwtTokenUtil {
                 .setSigningKey(secret)
                 .parseClaimsJws(token)
                 .getBody();
+    }
+
+    private boolean isTokenExpired(String token) {
+        return this.getAllClaimsFromToken(token).getExpiration().before(new Date());
+    }
+
+    public boolean isInvalid(String token) {
+        return this.isTokenExpired(token);
     }
 }
