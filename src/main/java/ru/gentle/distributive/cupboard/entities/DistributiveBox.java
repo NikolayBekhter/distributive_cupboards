@@ -16,10 +16,10 @@ public class DistributiveBox {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "box_number", nullable = false)
+    @Column(name = "box_number")
     private String boxNumber;
 
-    @Column(name = "street", nullable = false)
+    @Column(name = "street")
     private String street;
 
     @Column(name = "house")
@@ -36,4 +36,7 @@ public class DistributiveBox {
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "author")
+    private String author;
 }
