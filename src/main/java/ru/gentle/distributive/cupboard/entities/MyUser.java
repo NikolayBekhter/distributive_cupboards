@@ -47,7 +47,7 @@ public class MyUser {
     private Collection<Role> roles;
 
     @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at"/*, nullable = false, updatable = false*/)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp

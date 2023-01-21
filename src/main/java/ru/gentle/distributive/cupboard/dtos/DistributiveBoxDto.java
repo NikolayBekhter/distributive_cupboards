@@ -17,4 +17,5 @@ public class DistributiveBoxDto {
     private String entrance;
     private String enterCode;
     private String description;
+    private String author;
 }

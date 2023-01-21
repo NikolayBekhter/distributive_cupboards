@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html ng-app="box">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="icon" href="/favicon/icon.png" sizes="any">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+    <title>Поиск шкафов</title>
+</head>
+
+<body>
+
+<div>
+    <div class="container" ng-controller="indexController">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#!/">Главная</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#!/admin">Администрация<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" ng-show="!isUserLoggedIn()">
+                        <a class="nav-link" href="#!/add">Добавить</a>
+                    </li>
+                    <!--                    <li class="nav-item">-->
+                    <!--                        <a class="nav-link disabled" href="#">Disabled</a>-->
+                    <!--                    </li>-->
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item" ng-show="!isUserLoggedIn()">
+                            <button class="btn btn-outline-secondary my-2 my-sm-0" ng-click="tryToLogout()">Выйти</button>
+                        </li>
+                        <li class="nav-item" ng-show="!isUserLoggedIn()">
+                            <a class="nav-link disabled" href="#!/auth">Авторизоваться</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </nav>
+
+
+        <!--<h3>Добавить продукт</h3>
+        <form novalidate ng-submit="updateProduct()">
+            <input class="form-control" type="number" placeholder="ID" ng-model="update_product.id">
+            <p></p>
+            <input class="form-control" type="text" placeholder="Название продукта" ng-model="update_product.title">
+            <p></p>
+            <input class="form-control" type="number" placeholder="Цена" ng-model="update_product.cost">
+            <p></p>
+            <button type="submit" class="btn btn-primary">Сохранить продукт</button>
+        </form>
+        <form>
+            <a href="/users/auth.html">To users</a>
+        </form>-->
+
+        <ng-view></ng-view>
+
+        <script src="index.js"></script>
+        <script src="admin/admin.js"></script>
+        <script src="auth/auth.js"></script>
+        <script src="home/home.js"></script>
+        <script src="add/add.js"></script>
+        <!-- Основное содержимое страницы (кроме футера) -->
+        <!-- ... -->
+    </div>
+</div>
+<!-- Пустой блок -->
+<!--<div class="push"></div>-->
+
+<!--<div class="footer">-->
+<!--    &lt;!&ndash; Сожержимое футера &ndash;&gt;-->
+<!--    &lt;!&ndash; ... &ndash;&gt;-->
+<!--    <nav aria-label="Page navigation example">-->
+<!--        <ul class="pagination">-->
+<!--            <li class="page-item">-->
+<!--                <a class="page-link" href="#" aria-label="Previous">-->
+<!--                    <span aria-hidden="true">&laquo;</span>-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--            <li class="page-item">-->
+<!--                <a class="page-link" href="#" aria-label="Next">-->
+<!--                    <span aria-hidden="true">&raquo;</span>-->
+<!--                </a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+<!--</div>-->
+
+</body>
+
+</html>

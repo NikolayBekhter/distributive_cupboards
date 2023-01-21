@@ -1,0 +1,75 @@
+<div>
+
+    <section class="h-100" style="background-color: #eee;">
+        <div class="container h-100 py-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-normal mb-0 text-black">Страница добавления шкафа</h3>
+            </div>
+            <div>
+                <form ng-submit="addBox()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="boxNumber">Номер шкафа</label>
+                            <input type="text" class="form-control" id="boxNumber" placeholder="Номер шкафа" ng-model="new_box.boxNumber">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="street">Улица</label>
+                            <input type="text" class="form-control" id="street" placeholder="Улица" ng-model="new_box.street">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="house">Номер дома</label>
+                            <input type="text" class="form-control" id="house" placeholder="Номер дома" ng-model="new_box.house">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="house_block">Корпус</label>
+                            <input type="text" class="form-control" id="house_block" placeholder="Корпус" ng-model="new_box.houseBlock">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="entrance">Подъезд</label>
+                            <input type="text" class="form-control" id="entrance" placeholder="Подъезд" ng-model="new_box.entrance">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="enter_code">Код домофона</label>
+                            <input type="text" class="form-control" id="enter_code" placeholder="Код домофона" ng-model="new_box.enterCode">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Описание</label>
+                        <input type="text" class="form-control" id="description" placeholder="Описание" ng-model="new_box.description">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </form>
+                <!--                <td></td>-->
+                <!--                <div class="signin-image">-->
+                <!--                    &lt;!&ndash;        <figure><img src="regform/images/signin-image.jpg" alt="sing up image"></figure>&ndash;&gt;-->
+                <!--                    <a href="#!/registration" class="signup-image-link">У меня нет аккаунта</a>-->
+                <!--                </div>-->
+            </div>
+            <div>
+                <form ng-submit="updateBox()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="ID">ID</label>
+                            <input type="text" class="form-control" id="ID" placeholder="ID" ng-model="update_box.id">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="new_enter_code">Код домофона</label>
+                            <input type="text" class="form-control" id="new_enter_code" placeholder="Код домофона" ng-model="update_box.enterCode">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update_description">Описание</label>
+                        <input type="text" class="form-control" id="update_description" placeholder="Описание" ng-model="update_box.description">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Изменить</button>
+                </form>
+                <!--                <td></td>-->
+                <!--                <div class="signin-image">-->
+                <!--                    &lt;!&ndash;        <figure><img src="regform/images/signin-image.jpg" alt="sing up image"></figure>&ndash;&gt;-->
+                <!--                    <a href="#!/registration" class="signup-image-link">У меня нет аккаунта</a>-->
+                <!--                </div>-->
+            </div>
+        </div>
+    </section>
+
+</div>

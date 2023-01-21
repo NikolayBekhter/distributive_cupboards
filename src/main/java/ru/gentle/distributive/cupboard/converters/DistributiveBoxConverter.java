@@ -1,20 +1,24 @@
 package ru.gentle.distributive.cupboard.converters;
 
+import org.springframework.stereotype.Service;
 import ru.gentle.distributive.cupboard.dtos.DistributiveBoxDto;
 import ru.gentle.distributive.cupboard.entities.DistributiveBox;
 
+@Service
 public class DistributiveBoxConverter {
     public DistributiveBoxDto entityToDto(DistributiveBox box) {
-        return new DistributiveBoxDto(
-                box.getId(),
-                box.getBoxNumber(),
-                box.getStreet(),
-                box.getHouse(),
-                box.getHouseBlock(),
-                box.getEntrance(),
-                box.getEnterCode(),
-                box.getDescription()
-        );
+        DistributiveBoxDto boxDto = new DistributiveBoxDto();
+        boxDto.setId(box.getId());
+        boxDto.setBoxNumber(box.getBoxNumber());
+        boxDto.setStreet(box.getStreet());
+        boxDto.setHouse(box.getHouse());
+        boxDto.setHouseBlock(box.getHouseBlock());
+        boxDto.setEntrance(box.getEntrance());
+        boxDto.setEnterCode(box.getEnterCode());
+        boxDto.setDescription(box.getDescription());
+        boxDto.setAuthor(box.getAuthor());
+
+        return boxDto;
     }
 
     public DistributiveBox dtoToEntity(DistributiveBoxDto boxDto) {
@@ -27,6 +31,7 @@ public class DistributiveBoxConverter {
         box.setEntrance(boxDto.getEntrance());
         box.setEnterCode(boxDto.getEnterCode());
         box.setDescription(boxDto.getDescription());
+        box.setAuthor(boxDto.getAuthor());
         return box;
     }
 }
