@@ -1,0 +1,37 @@
+#server:
+#  port: 10000
+#
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/boxes
+#    driver-class-name: org.postgresql.Driver
+#    username: postgres
+#    password: admin
+#
+#  jpa:
+#    show-sql: true
+#    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+#    hibernate:
+#      ddl-auto: update
+
+server:
+  port: 10000
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://95.165.90.118:1987/test_db?options=--search_path%3Ddistributive_cupboards
+    username: postgres
+    password:
+  security:
+    user:
+      name: admin
+      password: admin
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+jwt:
+  secret: EI&!%Ti34NeSmOtRi7666SUDA23232eto43SEcRET@#$%^&%$@Ponyal?uroD
+  lifetime: 36000000
