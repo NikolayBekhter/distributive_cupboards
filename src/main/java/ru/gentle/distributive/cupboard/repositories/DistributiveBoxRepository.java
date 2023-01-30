@@ -9,4 +9,6 @@ import java.util.Optional;
 @Repository
 public interface DistributiveBoxRepository extends JpaRepository<DistributiveBox, Long> {
     Optional<DistributiveBox> findByBoxNumber(String boxNumber);
+
+    void deleteByBoxNumber(String boxNumber);
 }

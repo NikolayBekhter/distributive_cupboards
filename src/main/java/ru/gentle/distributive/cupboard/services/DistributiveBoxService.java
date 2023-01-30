@@ -2,6 +2,7 @@ package ru.gentle.distributive.cupboard.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.gentle.distributive.cupboard.converters.DistributiveBoxConverter;
 import ru.gentle.distributive.cupboard.dtos.DistributiveBoxDto;
 import ru.gentle.distributive.cupboard.entities.DistributiveBox;
@@ -24,18 +25,23 @@ public class DistributiveBoxService {
         return boxRepository.save(boxConverter.dtoToEntity(boxDto));
     }
 
+    @Transactional
     public DistributiveBox updateBox(DistributiveBoxDto boxDto) {
         DistributiveBox box = boxRepository.findById(boxDto.getId())
                 .orElseThrow(() -> new ResourceNotFoundException("Шкаф не найден с id " + boxDto.getId()));
-        if (!boxDto.getId().equals(null)) {
-            if (!boxDto.getEnterCode().equals("")) {
-                box.setEnterCode(boxDto.getEnterCode());
-            }
-            if (!boxDto.getDescription().equals("")) {
-                box.setDescription(boxDto.getDescription());
-            }
-
+        box.setId(box.getId());
+        if (boxDto.getEnterCode() != null) {
+            box.setEnterCode(boxDto.getEnterCode());
         }
+        if (boxDto.getDescription() != null) {
+            box.setDescription(box.getDescription() + "..." + boxDto.getDescription());
+        }
+
         return boxRepository.save(box);
+    }
+
+    @Transactional
+    public void deleteByNumber(String boxNumber) {
+        boxRepository.deleteByBoxNumber(boxNumber);
     }
 }

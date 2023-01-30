@@ -5,8 +5,10 @@
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="fw-normal mb-0 text-black">Страница администрации</h3>
             </div>
+            <HR>
             <div>
                 <form ng-submit="setRole()">
+                    <h5>Добавить роль например   ROLE_ADMIN</h5>
                     <div class="form-group">
                         <label for="login">Логин</label>
                         <input type="text" class="form-control" id="login" placeholder="Логин" ng-model="user.nickname">
@@ -23,6 +25,23 @@
 <!--                    <a href="#!/registration" class="signup-image-link">У меня нет аккаунта</a>-->
 <!--                </div>-->
             </div>
+            <HR>
+            <div>
+                <form>
+                    <h5>Удалить шкаф по номеру например   111-11</h5>
+                    <div class="form-group">
+                        <label for="login">Номер шкафа</label>
+                        <input type="text" class="form-control" id="boxNumber" placeholder="Номер шкафа" ng-model="boxNumber">
+                    </div>
+                    <button type="submit" class="btn btn-danger" ng-click="deleteBoxByNumber(boxNumber)">Удалить</button>
+                </form>
+                <!--                <td></td>-->
+                <!--                <div class="signin-image">-->
+                <!--                    &lt;!&ndash;        <figure><img src="regform/images/signin-image.jpg" alt="sing up image"></figure>&ndash;&gt;-->
+                <!--                    <a href="#!/registration" class="signup-image-link">У меня нет аккаунта</a>-->
+                <!--                </div>-->
+            </div>
+            <HR>
         </div>
     </section>
 

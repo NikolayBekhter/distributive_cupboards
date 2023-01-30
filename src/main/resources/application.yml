@@ -15,14 +15,21 @@
 #      ddl-auto: update
 
 server:
+
   port: 10000
 
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://95.165.90.118:1987/test_db?options=--search_path%3Ddistributive_cupboards
+#    username: postgres
+#    password:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://95.165.90.118:1987/test_db?options=--search_path%3Ddistributive_cupboards
+    url: jdbc:postgresql://192.168.1.110:5432/test_db?options=--search_path%3Ddistributive_cupboards
     username: postgres
-    password:
+    password: admin
   security:
     user:
       name: admin
@@ -32,6 +39,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
 jwt:
   secret: EI&!%Ti34NeSmOtRi7666SUDA23232eto43SEcRET@#$%^&%$@Ponyal?uroD
   lifetime: 36000000

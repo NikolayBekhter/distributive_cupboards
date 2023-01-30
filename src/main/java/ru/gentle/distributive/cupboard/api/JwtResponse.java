@@ -1,4 +1,4 @@
-package ru.gentle.distributive.cupboard.security.api;
+package ru.gentle.distributive.cupboard.api;
 
 public class JwtResponse {
     private String token;
