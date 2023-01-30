@@ -9,8 +9,8 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import ru.gentle.distributive.cupboard.security.api.JwtRequest;
-import ru.gentle.distributive.cupboard.security.api.JwtResponse;
+import ru.gentle.distributive.cupboard.api.JwtRequest;
+import ru.gentle.distributive.cupboard.api.JwtResponse;
 import ru.gentle.distributive.cupboard.security.utils.JwtTokenUtil;
 import ru.gentle.distributive.cupboard.services.UserService;
 

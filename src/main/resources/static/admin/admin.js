@@ -9,10 +9,10 @@ angular.module('box').controller('adminController', function ($scope, $http, $lo
             });
     };
 
-    $scope.deleteFromCart = function (productId) {
-        $http.get(contextPath + 'cart/remove/' + productId)
+    $scope.deleteBoxByNumber = function (boxNumber) {
+        $http.delete('http://localhost:10000/api/v1/box/' + boxNumber)
             .then(function (response) {
-                $scope.loadCart();
+                alert('Шкаф с номером: ' + boxNumber + ' удален!');
             });
     };
 
