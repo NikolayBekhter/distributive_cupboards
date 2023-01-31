@@ -1,0 +1,36 @@
+<div>
+    <p></p>
+    <h3>Поиск по nickname</h3>
+    <form novalidate ng-submit="loadUsers()">
+        <div class="form-floating input-group-sm">
+            <input type="text" class="form-control" id="nickname" placeholder="" ng-model="filter.nickname_part">
+            <label for="nickname">nickname</label>
+        </div>
+        <p></p>
+        <button type="submit" class="btn btn-outline-warning btn-sm" style="width: 100%">Найти</button>
+    </form>
+
+    <p></p>
+    <h3>Работники</h3>
+    <p></p>
+    <table class="table table-hover">
+        <tr>
+            <td>ID</td>
+            <td>Nickname</td>
+            <td>Почта подтверждена</td>
+            <td>Бан</td>
+            <td>Удалить</td>
+        </tr>
+        <tbody>
+        <tr ng-repeat="u in usersPage">
+            <td>{{u.id}}</td>
+            <td>{{u.nickname}}</td>
+            <td>{{u.isPresent}}</td>
+            <td>
+                <button type="button" class="btn btn-outline-success" ng-click="userBan(u.id)">Бан</button>
+                <button type="button" class="btn btn-danger" ng-click="deleteUser(u.id)">Удалить</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
