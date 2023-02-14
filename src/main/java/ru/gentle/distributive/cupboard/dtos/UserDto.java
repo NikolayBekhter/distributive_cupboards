@@ -20,4 +20,6 @@ public class UserDto {
     private String department;
     private String updatedAt;
     private List<Role> roles;
+    private boolean isActive;
+    private boolean isPresent;
 }

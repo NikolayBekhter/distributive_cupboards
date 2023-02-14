@@ -22,6 +22,10 @@
                 templateUrl: 'add/add.html',
                 controller: 'addController'
             })
+            .when('/user', {
+                templateUrl: 'users/users.js',
+                controller: 'userController'
+            })
             .otherwise({
                 redirectTo: '/'
             });

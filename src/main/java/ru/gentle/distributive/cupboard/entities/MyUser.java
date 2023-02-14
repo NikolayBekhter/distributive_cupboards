@@ -41,6 +41,9 @@ public class MyUser {
     @Column(name = "is_active", nullable = false)
     private boolean isActive;
 
+    @Column(name = "is_present", nullable = false)
+    private boolean isPresent;
+
     @ManyToMany
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
