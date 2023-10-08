@@ -1,4 +1,4 @@
-angular.module('box').controller('homeController', function ($scope, $http, $location) {
+angular.module('box').controller('homeController', function ($scope, $http) {
     const contextPath = 'http://localhost:10000/api/v1/box/';
 
     $scope.getBox = function (boxNumber) {

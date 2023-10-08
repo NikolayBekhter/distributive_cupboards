@@ -3,8 +3,8 @@
     <h3>Поиск по nickname</h3>
     <form novalidate ng-submit="loadUsers()">
         <div class="form-floating input-group-sm">
-            <input type="text" class="form-control" id="nickname" placeholder="" ng-model="filter.nickname_part">
-            <label for="nickname">nickname</label>
+            <input type="text" class="form-control" id="nickname" placeholder="nickname"
+                   ng-model="filter.nickname_part">
         </div>
         <p></p>
         <button type="submit" class="btn btn-outline-warning btn-sm" style="width: 100%">Найти</button>
@@ -25,12 +25,44 @@
         <tr ng-repeat="u in usersPage">
             <td>{{u.id}}</td>
             <td>{{u.nickname}}</td>
-            <td>{{u.isPresent}}</td>
+            <td>{{u.present}}</td>
             <td>
-                <button type="button" class="btn btn-outline-success" ng-click="userBan(u.id)">Бан</button>
+                <button type="button" class="btn btn-outline-success" ng-click="userBan(u.id)">{{u.active}}</button>
+            </td>
+            <td>
                 <button type="button" class="btn btn-danger" ng-click="deleteUser(u.id)">Удалить</button>
             </td>
         </tr>
         </tbody>
     </table>
+
+    <div class="card-body p-4">
+        <HR>
+        <h3>Добавить пользователя</h3>
+        <form ng-submit="addUser()">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nicknameNewUser">Nickname</label>
+                    <input type="text" class="form-control" id="nicknameNewUser" placeholder="Nickname" ng-model="new_user.nickname">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="mail">Mail</label>
+                    <input type="text" class="form-control" id="mail" placeholder="Mail" ng-model="new_user.mail">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Пароль</label>
+                    <input type="text" class="form-control" id="password" placeholder="Пароль" ng-model="new_user.password">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fullname">Фамилия и имя</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Фамилия и имя" ng-model="new_user.fullname">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="department">Отдел</label>
+                    <input type="text" class="form-control" id="department" placeholder="Отдел" ng-model="new_user.department">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
 </div>
