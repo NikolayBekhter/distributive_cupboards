@@ -9,7 +9,7 @@
             <div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="boxNumber">Номер</label>
+                        <label for="boxNumber">Номер шкафа</label>
                         <input type="text" class="form-control" id="boxNumber" placeholder="Введите номер" ng-model="boxNumber">
                     </div>
                 </div>
@@ -25,7 +25,7 @@
             <HR>
             <div>
                 <ul class="list-inline">
-                    <li class="list-inline-item">-ID: {{ID + boxList.id}}-</li>
+                    <li class="list-inline-item">-Номер шкафа: {{boxList.boxNumber}}-</li>
                     <li class="list-inline-item">-Улица: {{boxList.street}}-</li>
                     <li class="list-inline-item">-Дом: {{boxList.house}}-</li>
                     <li class="list-inline-item">-Корпус: {{boxList.houseBlock}}-</li>
