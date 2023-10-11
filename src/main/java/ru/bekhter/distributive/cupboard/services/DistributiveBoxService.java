@@ -29,13 +29,14 @@ public class DistributiveBoxService {
     public DistributiveBox updateBox(DistributiveBoxDto boxDto) {
         DistributiveBox box = boxRepository.findByBoxNumber(boxDto.getBoxNumber())
                 .orElseThrow(() -> new ResourceNotFoundException("Шкаф не найден с id " + boxDto.getId()));
-        box.setId(box.getId());
+//        box.setId(box.getId());
         if (boxDto.getEnterCode() != null) {
             box.setEnterCode(boxDto.getEnterCode());
         }
         if (boxDto.getDescription() != null) {
             box.setDescription(box.getDescription() + "..." + boxDto.getDescription());
         }
+        box.setAuthor(boxDto.getAuthor());
 
         return boxRepository.save(box);
     }

@@ -7,42 +7,33 @@
             </div>
             <HR>
             <div class="signin-image">
-                <a href="#!/users" class="signup-image-link">Управление пользователями</a>
+                <h4><a href="#!/users" style="color: green">Управление пользователями</a></h4>
             </div>
+            <HR>
             <div>
                 <form ng-submit="setRole()">
-                    <h5>Добавить роль например   ROLE_ADMIN</h5>
+                    <h5>Добавить роль</h5>
                     <div class="form-group">
-                        <label for="login">Логин</label>
-                        <input type="text" class="form-control" id="login" placeholder="Логин" ng-model="user.nickname">
+                        <label for="nickname">Nickname например NBekhter</label>
+                        <input type="text" class="form-control" id="nickname" placeholder="Nickname" ng-model="user.nickname">
                     </div>
                     <div class="form-group">
-                        <label for="inputRole">Новая роль</label>
+                        <label for="inputRole">Новая роль например ROLE_ADMIN</label>
                         <input type="text" class="form-control" id="inputRole" placeholder="Новая роль" ng-model="user.role">
                     </div>
                     <button type="submit" class="btn btn-primary">Добавить новую роль</button>
                 </form>
-<!--                <td></td>-->
-<!--                <div class="signin-image">-->
-<!--                    &lt;!&ndash;        <figure><img src="regform/images/signin-image.jpg" alt="sing up image"></figure>&ndash;&gt;-->
-<!--                    <a href="#!/registration" class="signup-image-link">У меня нет аккаунта</a>-->
-<!--                </div>-->
             </div>
             <HR>
             <div>
                 <form>
-                    <h5>Удалить шкаф по номеру например   111-11</h5>
+                    <h5>Удалить шкаф</h5>
                     <div class="form-group">
-                        <label for="login">Номер шкафа</label>
+                        <label for="boxNumber">Номер шкафа например 111-11</label>
                         <input type="text" class="form-control" id="boxNumber" placeholder="Номер шкафа" ng-model="boxNumber">
                     </div>
                     <button type="submit" class="btn btn-danger" ng-click="deleteBoxByNumber(boxNumber)">Удалить</button>
                 </form>
-                <!--                <td></td>-->
-                <!--                <div class="signin-image">-->
-                <!--                    &lt;!&ndash;        <figure><img src="regform/images/signin-image.jpg" alt="sing up image"></figure>&ndash;&gt;-->
-                <!--                    <a href="#!/registration" class="signup-image-link">У меня нет аккаунта</a>-->
-                <!--                </div>-->
             </div>
             <HR>
         </div>

@@ -40,6 +40,7 @@ public class SecurityConfig {
                 .csrf().disable()
                 .cors().disable()
                 .authorizeHttpRequests()
+                .requestMatchers("/api/v1/box/delete/**").hasAnyRole("ADMIN")
                 .requestMatchers("/api/v1/box/**", "/api/v1/users/**").authenticated()
                 .anyRequest().permitAll()
                 .and()

@@ -16,23 +16,18 @@
                 <div>
                     <button type="submit" class="btn btn-primary" ng-click="getBox(boxNumber)">Найти</button>
                 </div>
-                <!--                <td></td>-->
-                <!--                <div class="signin-image">-->
-                <!--                    &lt;!&ndash;        <figure><img src="regform/images/signin-image.jpg" alt="sing up image"></figure>&ndash;&gt;-->
-                <!--                    <a href="#!/registration" class="signup-image-link">У меня нет аккаунта</a>-->
-                <!--                </div>-->
             </div>
             <HR>
             <div>
                 <ul class="list-inline">
-                    <li class="list-inline-item">-Номер шкафа: {{boxList.boxNumber}}-</li>
-                    <li class="list-inline-item">-Улица: {{boxList.street}}-</li>
-                    <li class="list-inline-item">-Дом: {{boxList.house}}-</li>
-                    <li class="list-inline-item">-Корпус: {{boxList.houseBlock}}-</li>
-                    <li class="list-inline-item">-Подъезд: {{boxList.entrance}}-</li>
-                    <li class="list-inline-item">-Код домофона: {{boxList.enterCode}}-</li>
-                    <li class="list-inline-item">-Описание: {{boxList.description}}-</li>
-                    <li class="list-inline-item">-Автор: {{boxList.author}}-</li>
+                    <li class="list-inline-item" ng-show="boxList.boxNumber != null">-Номер шкафа: {{boxList.boxNumber}}-</li>
+                    <li class="list-inline-item" ng-show="boxList.street != null">-Улица: {{boxList.street}}-</li>
+                    <li class="list-inline-item" ng-show="boxList.house != null">-Дом: {{boxList.house}}-</li>
+                    <li class="list-inline-item" ng-show="boxList.houseBlock != null">-Корпус: {{boxList.houseBlock}}-</li>
+                    <li class="list-inline-item" ng-show="boxList.entrance != null">-Подъезд: {{boxList.entrance}}-</li>
+                    <li class="list-inline-item" ng-show="boxList.enterCode != null">-Код домофона: {{boxList.enterCode}}-</li>
+                    <li class="list-inline-item" ng-show="boxList.description != null">-Описание: {{boxList.description}}-</li>
+                    <li class="list-inline-item" ng-show="boxList.author != null">-Автор: {{boxList.author}}-</li>
                 </ul>
             </div>
         </div>

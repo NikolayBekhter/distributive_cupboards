@@ -1,4 +1,4 @@
-angular.module('box').controller('userController', function ($scope, $http, $location) {
+angular.module('box').controller('userController', function ($scope, $http) {
     const contextPath = 'http://localhost:10000/api/v1/users';
 
     $scope.loadUsers = function (pageIndex = 1) {
@@ -11,7 +11,6 @@ angular.module('box').controller('userController', function ($scope, $http, $loc
             }
         }).then(function (response) {
             $scope.usersPage = response.data.content;
-            console.log($scope.usersPage);
         });
     };
 
@@ -34,7 +33,14 @@ angular.module('box').controller('userController', function ($scope, $http, $loc
         $http.post(contextPath, $scope.new_user)
             .then(function (response) {
                 $scope.loadUsers();
-                console.log('Успех!');
+
+                $scope.new_user.nickname = null;
+                $scope.new_user.mail = null;
+                $scope.new_user.password = null;
+                $scope.new_user.fullname = null;
+                $scope.new_user.department = null;
+
+                alert('Пользователь добавлен!');
             });
     };
 

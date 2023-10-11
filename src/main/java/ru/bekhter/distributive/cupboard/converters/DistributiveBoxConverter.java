@@ -23,10 +23,10 @@ public class DistributiveBoxConverter {
 
     public DistributiveBox dtoToEntity(DistributiveBoxDto boxDto) {
         DistributiveBox box = new DistributiveBox();
-        box.setBoxNumber(boxDto.getBoxNumber());
         box.setStreet(boxDto.getStreet());
-        box.setHouse(boxDto.getHouse());
+        box.setBoxNumber(boxDto.getBoxNumber());
         box.setHouseBlock(boxDto.getHouseBlock());
+        box.setHouse(boxDto.getHouse());
         box.setEntrance(boxDto.getEntrance());
         box.setEnterCode(boxDto.getEnterCode());
         box.setDescription(boxDto.getDescription());

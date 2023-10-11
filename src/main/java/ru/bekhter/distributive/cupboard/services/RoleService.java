@@ -15,7 +15,4 @@ public class RoleService {
         return roleRepository.findByNameRole(nameRole)
                 .orElseThrow(() -> new ResourceNotFoundException("Роль не найдена."));
     }
-    public Role getUserRole() {
-        return roleRepository.findByNameRole("ROLE_USER").get();
-    }
 }

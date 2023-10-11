@@ -20,6 +20,7 @@ angular.module('box').controller('authController', function ($scope, $http, $loc
                         .then(function (response) {
                             let roles = response.data;
                             $localStorage.roleIndex = roles.findIndex(item => item.name === 'ROLE_ADMIN');
+                            console.log($localStorage.roleIndex);
                         })
 
                     $location.path('/');
