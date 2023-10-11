@@ -53,7 +53,7 @@ public class UserController {
         userService.deleteById(id);
     }
 
-    @PostMapping("/user/set_role")
+    @PostMapping("/set_role")
     public UserDto setRole(@RequestBody RoleRequest roleRequest) {
         return userConverter.entityToDto(userService.setRole(roleRequest.getNickname(), roleRequest.getRole()));
     }

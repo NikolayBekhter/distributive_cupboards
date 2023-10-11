@@ -26,12 +26,11 @@ public class DistributiveBoxController {
     }
 
     @PostMapping("/update")
-    public DistributiveBoxDto updateBox(@RequestBody DistributiveBoxDto boxDto, @RequestHeader String username) {
-        System.out.println(username);
+    public DistributiveBoxDto updateBox(@RequestBody DistributiveBoxDto boxDto) {
         return boxConverter.entityToDto(boxService.updateBox(boxDto));
     }
 
-    @DeleteMapping("/{boxNumber}")
+    @DeleteMapping("/delete/{boxNumber}")
     public void deleteByNumber(@PathVariable String boxNumber) {
         boxService.deleteByNumber(boxNumber);
     }

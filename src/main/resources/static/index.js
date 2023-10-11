@@ -60,14 +60,15 @@ angular.module('box').controller('indexController', function ($rootScope, $locat
 
     $scope.clearUser = function () {
         delete $localStorage.simpleUser;
+        delete $localStorage.roleIndex;
         $http.defaults.headers.common.Authorization = '';
     };
 
     $scope.isUserLoggedIn = function () {
-        if ($localStorage.simpleUser) {
-            return true;
-        } else {
-            return false;
-        }
+        return !!$localStorage.simpleUser;
+    };
+
+    $scope.isRoleAdmin = function () {
+        return $localStorage.roleIndex === 1;
     };
 });

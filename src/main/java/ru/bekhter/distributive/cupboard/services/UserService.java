@@ -73,7 +73,7 @@ public class UserService {
         user.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
         user.setMail(userDto.getMail());
         user.setDepartment(userDto.getDepartment());
-        user.setRoles(List.of(roleService.getUserRole()));
+        user.setRoles(List.of(roleService.findRoleByName("ROLE_USER")));
         user.setActive(true);
         user.setPresent(false);
         return userRepository.save(user);
